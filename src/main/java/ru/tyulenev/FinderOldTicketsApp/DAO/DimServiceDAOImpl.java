@@ -18,7 +18,7 @@ public class DimServiceDAOImpl implements DimServiceDAO {
     @Override
     public List<DimServiceEntity> getAllData() {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("FROM DimSerciceEntity",
+        Query query = session.createQuery("FROM DimServiceEntity",
                 DimServiceEntity.class);
         List<DimServiceEntity> factVisit = query.getResultList();
         return factVisit;

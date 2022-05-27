@@ -57,10 +57,9 @@ public class RESTController {
     }
 
     @GetMapping("/getInfo/ticket/{id}/date/{date}")
-    public String getDataByDateAndId(@PathVariable String id,
+    public ResponseData getDataByDateAndId(@PathVariable String id,
                                            @PathVariable String date) {
-        String responseData = "getDataByDateAndId :\n id = " + id +
-                "\ndate = " + date;
+        ResponseData responseData = dimVisitService.getResponce(id, Long.parseLong(date));
         return responseData;
     }
 }
