@@ -56,11 +56,11 @@ public class RESTController {
         return resData;
     }
 
-    @GetMapping("/getInfo/ticket/{id}/date/{date}/date")
+    @GetMapping("/getInfo/ticket/{id}/date/{date}")
     public String getDataByDateAndId(@PathVariable String id,
-                                           @PathVariable Long date) {
-         String responseData = "getDataByDateAndId :\n id = " + id +
-                "\ndate = " + date.toString();
+                                           @PathVariable String date) {
+        String responseData = "getDataByDateAndId :\n id = " + id +
+                "\ndate = " + date;
         return responseData;
     }
 }
