@@ -1,0 +1,4 @@
+
+/api/all_visits -
+/api/fact_visits
+/api/dim_services
