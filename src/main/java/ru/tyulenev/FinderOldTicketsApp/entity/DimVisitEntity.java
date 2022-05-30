@@ -11,7 +11,7 @@ public class DimVisitEntity {
     private Integer id;
 //    private Integer client_key;
 //    private Integer branch_origin_id;
-    private Integer origin_id;
+    private Long origin_id;
 //    private String vip_level;
     private String ticket_id;
     private Long created_timestamp;
@@ -36,11 +36,11 @@ public class DimVisitEntity {
         this.id = id;
     }
 
-    public Integer getOrigin_id() {
+    public Long getOrigin_id() {
         return origin_id;
     }
 
-    public void setOrigin_id(Integer origin_id) {
+    public void setOrigin_id(Long origin_id) {
         this.origin_id = origin_id;
     }
 

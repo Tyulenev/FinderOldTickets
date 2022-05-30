@@ -11,5 +11,5 @@ public interface ServiceVisits {
     public List<DimVisitEntity> getAllVisits();
     public List<FactVisitTransactionEntity> getFactVisits();
     public List<DimServiceEntity> getDimServices();
-    public ResponseData getResponce(String ticketId, Long date);
+    public ResponseData getResponce(String ticketId, String dateReq);
 }

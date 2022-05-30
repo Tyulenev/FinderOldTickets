@@ -1,11 +1,13 @@
 package ru.tyulenev.FinderOldTicketsApp.RestData;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class ResponseData {
     private String ticket_id;
-    private Date date;
+    private String date;
+    private String comment;
     private String custom_1;
     private String custom_2;
     private String custom_3;
@@ -14,6 +16,7 @@ public class ResponseData {
     private List<Long> origin_ids;
 
     public ResponseData() {
+        origin_ids = new ArrayList<Long>();
     }
 
     public String getTicket_id() {
@@ -24,12 +27,20 @@ public class ResponseData {
         this.ticket_id = ticket_id;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     public String getCustom_1() {
@@ -80,11 +91,16 @@ public class ResponseData {
         this.origin_ids = origin_ids;
     }
 
+    public void addOrigin_ids(Long originIdAdded) {
+        this.origin_ids.add(originIdAdded);
+    }
+
     @Override
     public String toString() {
         return "ResponseData{" +
                 "ticket_id='" + ticket_id + '\'' +
                 ", date=" + date +
+                ", comment='" + comment + '\'' +
                 ", custom_1='" + custom_1 + '\'' +
                 ", custom_2='" + custom_2 + '\'' +
                 ", custom_3='" + custom_3 + '\'' +
