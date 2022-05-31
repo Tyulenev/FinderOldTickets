@@ -1,6 +1,8 @@
 package ru.tyulenev.FinderOldTicketsApp.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.tyulenev.FinderOldTicketsApp.DAO.DimServiceDAO;
 import ru.tyulenev.FinderOldTicketsApp.DAO.DimVisitDAO;
 import ru.tyulenev.FinderOldTicketsApp.DAO.FactVisitDAO;
@@ -9,12 +11,14 @@ import ru.tyulenev.FinderOldTicketsApp.entity.DimServiceEntity;
 import ru.tyulenev.FinderOldTicketsApp.entity.DimVisitEntity;
 import ru.tyulenev.FinderOldTicketsApp.entity.FactVisitTransactionEntity;
 
-import javax.transaction.Transactional;
+//import javax.transaction.Transactional;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-@org.springframework.stereotype.Service
-public class ServiceVisitsImpl implements ServiceVisits {
+
+@Service
+public class ServiceVisitsImpl   implements ServiceVisits
+{
 
     @Autowired
     private DimVisitDAO visitDAO;
@@ -30,7 +34,7 @@ public class ServiceVisitsImpl implements ServiceVisits {
         System.out.println("Service meth getAllVisits:\n");
         return listData;
     }
-
+//
     @Override
     @Transactional
     public List<FactVisitTransactionEntity> getFactVisits() {

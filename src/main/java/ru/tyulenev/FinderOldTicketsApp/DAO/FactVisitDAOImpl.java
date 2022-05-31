@@ -2,16 +2,18 @@ package ru.tyulenev.FinderOldTicketsApp.DAO;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
+//import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import ru.tyulenev.FinderOldTicketsApp.entity.DimServiceEntity;
 import ru.tyulenev.FinderOldTicketsApp.entity.DimVisitEntity;
 import ru.tyulenev.FinderOldTicketsApp.entity.FactVisitTransactionEntity;
 
 import java.util.List;
 
 @Repository
-public class FactVisitDAOImpl implements FactVisitDAO {
+public class FactVisitDAOImpl implements FactVisitDAO
+{
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -19,9 +21,13 @@ public class FactVisitDAOImpl implements FactVisitDAO {
     @Override
     public List<FactVisitTransactionEntity> getAllData() {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from FactVisitTransactionEntity",
-                FactVisitTransactionEntity.class);
-        List<FactVisitTransactionEntity> factVisit = query.getResultList();
+//        Query query = session.createQuery("from FactVisitTransactionEntity",
+//                FactVisitTransactionEntity.class);
+//        List<FactVisitTransactionEntity> factVisit = query.getResultList();
+
+        List<FactVisitTransactionEntity> factVisit =
+                session.createQuery("from FactVisitTransactionEntity").list();
+
         return factVisit;
     }
 }
